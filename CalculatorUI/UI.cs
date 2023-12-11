@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CalculatorUI
+namespace calculatorUI
 {
     partial class Form1
     {
@@ -34,12 +34,15 @@ namespace CalculatorUI
         private Button cleanButton;
         private Label resultLabel;
         private Label historyLabel;
-        private RichTextBox RecordRichTextBox;
+        private RichTextBox recordsDataGridView;
 
-        private void intialUI()
+        //timer
+		private Timer doubleClickTimer = new Timer();
+		private void intialUI()
         {
-            //new 
-            this.zeroButton = new Button();
+
+			//new 
+			this.zeroButton = new Button();
             this.oneButton = new Button();
             this.twoButton = new Button();
             this.threeButton = new Button();
@@ -63,10 +66,15 @@ namespace CalculatorUI
             this.cleanButton = new Button();
             this.historyLabel = new Label();
             this.resultLabel = new Label();
-            this.RecordRichTextBox = new RichTextBox();
+            this.recordsDataGridView = new RichTextBox();
 
-            //zeroButton
-            this.zeroButton.Location = new System.Drawing.Point(110, 450);
+			//Timer
+			this.doubleClickTimer = new Timer();
+			this.doubleClickTimer.Interval = 100;
+			
+
+			//zeroButton
+			this.zeroButton.Location = new System.Drawing.Point(110, 450);
             this.zeroButton.Name = "zeroButton";
             this.zeroButton.Size = new System.Drawing.Size(75, 75);
             this.zeroButton.TabIndex = 3;
@@ -287,19 +295,20 @@ namespace CalculatorUI
             this.historyLabel.Enabled = true;
             this.historyLabel.Text = "";
 
-            //RecordRichTextBox
-            this.RecordRichTextBox.AutoSize = true;
-            this.RecordRichTextBox.Location = new System.Drawing.Point(410, 50);
-            this.RecordRichTextBox.Name = "historyRichTextBox";
-            this.RecordRichTextBox.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.RecordRichTextBox.Size = new System.Drawing.Size(200, 300);
-            this.RecordRichTextBox.TabIndex = 0;
-            this.RecordRichTextBox.Visible = true;
-            this.RecordRichTextBox.Enabled = true;
-            this.RecordRichTextBox.Text = "";
+            //recordsDataGridView
+            this.recordsDataGridView.AutoSize = true;
+            this.recordsDataGridView.Location = new System.Drawing.Point(450, 50);
+            this.recordsDataGridView.Name = "recordsDataGridView";
+            this.recordsDataGridView.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.recordsDataGridView.Size = new System.Drawing.Size(200, 300);
+            this.recordsDataGridView.TabIndex = 5;
+            this.recordsDataGridView.Visible = true;
+            this.recordsDataGridView.Enabled = true;
+            this.recordsDataGridView.Text = "";
 
-            // digit 
-            this.Controls.Add(zeroButton);
+
+			// digit 
+			this.Controls.Add(zeroButton);
             this.Controls.Add(oneButton);
             this.Controls.Add(twoButton);
             this.Controls.Add(threeButton);
@@ -323,8 +332,9 @@ namespace CalculatorUI
             this.Controls.Add(cleanButton);
             this.Controls.Add(historyLabel);
             this.Controls.Add(resultLabel);
-            //this.Controls.Add(RecordRichTextBox);
-        }
+            this.Controls.Add(recordsDataGridView);
+
+		}
 
 
     }

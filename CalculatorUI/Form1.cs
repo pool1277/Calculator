@@ -167,8 +167,8 @@ namespace calculatorUI
 
         private void OnUpdateRecordUI()
         {
-            recordsDataGridView.AppendText(calculator.Records.Last().record + "\n");
-            recordsDataGridView.Refresh();
+			recordsRichTextBox.AppendText(calculator.Records.Last().record + "\n");
+            recordsRichTextBox.Refresh();
         }
     }
 }

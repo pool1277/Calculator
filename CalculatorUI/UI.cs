@@ -28,19 +28,18 @@ namespace calculatorUI
         private Button divideButton;
 
         //other 
-        private DoubleClickButton equalButton;
+        private Button equalButton;
         private Button pointButton;
         private Button removeButton;
         private Button cleanButton;
         private Label resultLabel;
         private Label historyLabel;
-        private RichTextBox recordsDataGridView;
+        private RichTextBox recordsRichTextBox;
 
         //timer
         private Timer doubleClickTimer = new Timer();
         private void intialUI()
         {
-
             //new 
             this.zeroButton = new Button();
             this.oneButton = new Button();
@@ -60,18 +59,17 @@ namespace calculatorUI
             this.divideButton = new Button();
 
             //other 
-            this.equalButton = new DoubleClickButton();
+            this.equalButton = new Button();
             this.pointButton = new Button();
             this.removeButton = new Button();
             this.cleanButton = new Button();
             this.historyLabel = new Label();
             this.resultLabel = new Label();
-            this.recordsDataGridView = new RichTextBox();
+            this.recordsRichTextBox = new RichTextBox();
 
             //Timer
             this.doubleClickTimer = new Timer();
             this.doubleClickTimer.Interval = 100;
-
 
             //zeroButton
             this.zeroButton.Location = new System.Drawing.Point(110, 450);
@@ -296,16 +294,15 @@ namespace calculatorUI
             this.historyLabel.Text = "";
 
             //recordsDataGridView
-            this.recordsDataGridView.AutoSize = true;
-            this.recordsDataGridView.Location = new System.Drawing.Point(450, 50);
-            this.recordsDataGridView.Name = "recordsDataGridView";
-            this.recordsDataGridView.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.recordsDataGridView.Size = new System.Drawing.Size(200, 300);
-            this.recordsDataGridView.TabIndex = 5;
-            this.recordsDataGridView.Visible = true;
-            this.recordsDataGridView.Enabled = true;
-            this.recordsDataGridView.Text = "";
-
+            this.recordsRichTextBox.AutoSize = true;
+            this.recordsRichTextBox.Location = new System.Drawing.Point(450, 50);
+            this.recordsRichTextBox.Name = "recordsRichTextBox";
+            this.recordsRichTextBox.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.recordsRichTextBox.Size = new System.Drawing.Size(200, 300);
+            this.recordsRichTextBox.TabIndex = 5;
+            this.recordsRichTextBox.Visible = true;
+            this.recordsRichTextBox.Enabled = true;
+            this.recordsRichTextBox.Text = "";
 
             // digit 
             this.Controls.Add(zeroButton);
@@ -332,7 +329,7 @@ namespace calculatorUI
             this.Controls.Add(cleanButton);
             this.Controls.Add(historyLabel);
             this.Controls.Add(resultLabel);
-            this.Controls.Add(recordsDataGridView);
+            this.Controls.Add(recordsRichTextBox);
         }
     }
 }

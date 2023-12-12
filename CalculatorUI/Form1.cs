@@ -18,7 +18,7 @@ namespace calculatorUI
         private bool isDoubleClick = false;
         private calculator calculator = new calculator();
 
-		private Stopwatch clickInteralTimeWatch = new Stopwatch();
+        private Stopwatch clickInteralTimeWatch = new Stopwatch();
 
         public Form1()
         {
@@ -49,7 +49,7 @@ namespace calculatorUI
 
             calculator.UpdateRecordUI += OnUpdateRecordUI;
 
-		}
+        }
 
         private void keyIn_Click(object sender, EventArgs e)
         {
@@ -61,7 +61,7 @@ namespace calculatorUI
             resultLabel.Text = calculator.DigitExpression;
             historyLabel.Text = calculator.Expression;
 
-		}
+        }
 
         private void equalButton_DoubleClick(object sender, EventArgs e)
         {
@@ -71,7 +71,7 @@ namespace calculatorUI
             resultLabel.Text = calculator.DigitExpression;
             historyLabel.Text = calculator.Expression;
 
-		}
+        }
 
         private void onKeyDown(object sender, KeyEventArgs e)
         {
@@ -117,7 +117,7 @@ namespace calculatorUI
             resultLabel.Text = calculator.DigitExpression;
             historyLabel.Text = calculator.Expression;
 
-		}
+        }
 
         private void Botton_MouseDown(object sender, MouseEventArgs e)
         {
@@ -141,7 +141,7 @@ namespace calculatorUI
 
         }
 
-		private void doubleClickTimer_Tick(object sender, EventArgs e)
+        private void doubleClickTimer_Tick(object sender, EventArgs e)
         {
             // The timer has reached the double click time limit.
             if (clickInteralTimeWatch.Elapsed.TotalMilliseconds >= SystemInformation.DoubleClickTime)
@@ -162,13 +162,13 @@ namespace calculatorUI
                 isDoubleClick = false;
                 doubleClickTimer.Interval = 100;
 
-			}
+            }
         }
 
-		private void OnUpdateRecordUI()
+        private void OnUpdateRecordUI()
         {
             recordsDataGridView.AppendText(calculator.Records.Last().record + "\n");
-			recordsDataGridView.Refresh();
-		}
-	}
+            recordsDataGridView.Refresh();
+        }
+    }
 }

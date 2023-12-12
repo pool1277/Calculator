@@ -20,7 +20,7 @@ namespace calculatorUI
         private Button sevenButton;
         private Button eightButton;
         private Button nineButton;
-        
+
         //operator
         private Button addButton;
         private Button subtractButton;
@@ -37,12 +37,12 @@ namespace calculatorUI
         private RichTextBox recordsDataGridView;
 
         //timer
-		private Timer doubleClickTimer = new Timer();
-		private void intialUI()
+        private Timer doubleClickTimer = new Timer();
+        private void intialUI()
         {
 
-			//new 
-			this.zeroButton = new Button();
+            //new 
+            this.zeroButton = new Button();
             this.oneButton = new Button();
             this.twoButton = new Button();
             this.threeButton = new Button();
@@ -68,13 +68,13 @@ namespace calculatorUI
             this.resultLabel = new Label();
             this.recordsDataGridView = new RichTextBox();
 
-			//Timer
-			this.doubleClickTimer = new Timer();
-			this.doubleClickTimer.Interval = 100;
-			
+            //Timer
+            this.doubleClickTimer = new Timer();
+            this.doubleClickTimer.Interval = 100;
 
-			//zeroButton
-			this.zeroButton.Location = new System.Drawing.Point(110, 450);
+
+            //zeroButton
+            this.zeroButton.Location = new System.Drawing.Point(110, 450);
             this.zeroButton.Name = "zeroButton";
             this.zeroButton.Size = new System.Drawing.Size(75, 75);
             this.zeroButton.TabIndex = 3;
@@ -307,8 +307,8 @@ namespace calculatorUI
             this.recordsDataGridView.Text = "";
 
 
-			// digit 
-			this.Controls.Add(zeroButton);
+            // digit 
+            this.Controls.Add(zeroButton);
             this.Controls.Add(oneButton);
             this.Controls.Add(twoButton);
             this.Controls.Add(threeButton);
@@ -318,13 +318,13 @@ namespace calculatorUI
             this.Controls.Add(sevenButton);
             this.Controls.Add(eightButton);
             this.Controls.Add(nineButton);
-            
+
             // operator
             this.Controls.Add(addButton);
             this.Controls.Add(subtractButton);
             this.Controls.Add(multipleButton);
             this.Controls.Add(divideButton);
-            
+
             // other
             this.Controls.Add(equalButton);
             this.Controls.Add(pointButton);
@@ -333,9 +333,6 @@ namespace calculatorUI
             this.Controls.Add(historyLabel);
             this.Controls.Add(resultLabel);
             this.Controls.Add(recordsDataGridView);
-
-		}
-
-
+        }
     }
 }

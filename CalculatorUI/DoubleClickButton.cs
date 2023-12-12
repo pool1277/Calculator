@@ -10,9 +10,6 @@ namespace System.Windows.Forms
         {
             SetStyle(ControlStyles.StandardClick, true);
             SetStyle(ControlStyles.StandardDoubleClick, true);
-
         }
-
-
 	}
 }

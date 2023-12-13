@@ -48,6 +48,7 @@ namespace calculatorUI
                             Expression = DigitExpression.ToString() + keyInChar;
 
                         }
+
                         else if (operationStack.Count == 2 && (operationStack.Peek() == "+" || operationStack.Peek() == "-" || operationStack.Peek() == "*" || operationStack.Peek() == "/"))
                         {
                             operationStack.Push(DigitExpression);
@@ -58,7 +59,7 @@ namespace calculatorUI
 
                             decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
                             Records.Add(new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
-                            UpdateRecordUI.Invoke();
+                            UpdateRecordUI?.Invoke();
 
                             if (frontValue == null)
                             {
@@ -75,6 +76,7 @@ namespace calculatorUI
                             DigitExpression = reuslt.ToString();
                             Expression = reuslt.ToString() + keyInChar;
                         }
+
                         else if (operationStack.Count == 3 && (operationStack.ElementAt(1) == "+" || operationStack.ElementAt(1) == "-" || operationStack.ElementAt(1) == "*" || operationStack.ElementAt(1) == "/"))
                         {
                             decimal? backValue = Convert.ToDecimal(operationStack.Pop());
@@ -83,7 +85,7 @@ namespace calculatorUI
 
                             decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
                             Records.Add(new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
-                            UpdateRecordUI.Invoke();
+                            UpdateRecordUI?.Invoke();
 
                             if (frontValue == null)
                             {
@@ -196,7 +198,7 @@ namespace calculatorUI
 
                         decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
                         Records.Add(new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
-                        UpdateRecordUI.Invoke();
+                        UpdateRecordUI?.Invoke();
 
                         if (reuslt == null)
                         {
@@ -232,7 +234,7 @@ namespace calculatorUI
 
             decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
             Records.Add(new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
-            UpdateRecordUI.Invoke();
+            UpdateRecordUI?.Invoke();
 
             if (reuslt == null)
             {

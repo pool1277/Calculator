@@ -26,6 +26,7 @@ namespace calculatorUI
             intialUI();
 
             //event binding
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClose);
             this.doubleClickTimer.Tick += new EventHandler(doubleClickTimer_Tick);
             this.zeroButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.keyIn_Click);
             this.oneButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.keyIn_Click);
@@ -169,6 +170,10 @@ namespace calculatorUI
         {
 			recordsRichTextBox.AppendText(calculator.Records.Last().record + "\n");
             recordsRichTextBox.Refresh();
+        }
+        private void OnFormClose(object sender, FormClosingEventArgs e)
+        {
+            this.doubleClickTimer.Dispose();
         }
     }
 }

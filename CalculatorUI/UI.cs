@@ -244,7 +244,7 @@ namespace calculatorUI
             this.pointButton.Enabled = true;
 
             //removeButton
-            this.removeButton.Location = new System.Drawing.Point(310, 50);
+            this.removeButton.Location = new System.Drawing.Point(410, 150);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 75);
             this.removeButton.TabIndex = 3;
@@ -255,7 +255,7 @@ namespace calculatorUI
             this.removeButton.Enabled = true;
 
             //cleanButton
-            this.cleanButton.Location = new System.Drawing.Point(210, 50);
+            this.cleanButton.Location = new System.Drawing.Point(410, 250);
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.Size = new System.Drawing.Size(75, 75);
             this.cleanButton.TabIndex = 3;
@@ -288,9 +288,9 @@ namespace calculatorUI
             this.historyLabel.Enabled = true;
             this.historyLabel.Text = "";
 
-            //recordsDataGridView
+            //recordsRichTextBox
             this.recordsRichTextBox.AutoSize = true;
-            this.recordsRichTextBox.Location = new System.Drawing.Point(450, 50);
+            this.recordsRichTextBox.Location = new System.Drawing.Point(500, 150);
             this.recordsRichTextBox.Name = "recordsRichTextBox";
             this.recordsRichTextBox.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.recordsRichTextBox.Size = new System.Drawing.Size(200, 300);

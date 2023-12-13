@@ -66,6 +66,7 @@ namespace calculatorUI
                                 DigitExpression = "Divide zero errer";
                                 return;
                             }
+
                             //push back to stack
                             operationStack.Push(reuslt.ToString());
                             operationStack.Push(keyInChar);
@@ -84,7 +85,7 @@ namespace calculatorUI
                             decimal? frontValue = Convert.ToDecimal(operationStack.Pop());
 
                             decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
-                            Records.Add(new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
+                            Records.Add( new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
                             UpdateRecordUI?.Invoke();
 
                             if (frontValue == null)
@@ -96,7 +97,6 @@ namespace calculatorUI
                             operationStack.Push(reuslt.ToString());
                             operationStack.Push(keyInChar);
                             operationStack.Push(backValue.ToString());
-
 
                             //update expression
                             DigitExpression = reuslt.ToString();
@@ -151,6 +151,11 @@ namespace calculatorUI
                     //Console.WriteLine(keyInChar);
                     DigitExpression += keyInChar;
 
+                    if (DigitExpression == ".")
+                    {
+                        DigitExpression = "0.";
+                    }
+
                     // update Status
                     resetDigitExpression = false;
                     suspendOperation = false;
@@ -190,6 +195,7 @@ namespace calculatorUI
                         {
                             operationStack.Pop();
                         }
+
                         operationStack.Push(DigitExpression);
 
                         decimal? backValue = Convert.ToDecimal(operationStack.Pop());

@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -33,6 +33,63 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Corex.Application.FeatureControl, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Application.FeatureControl.Debug.0.3.4\lib\net48\Corex.Application.FeatureControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Backport, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Backport.Debug.0.3.0\lib\net40\Corex.Backport.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Common, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Core.Debug.0.3.4\lib\net48\Corex.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Common.Grpc, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Core.Debug.0.3.4\lib\net48\Corex.Common.Grpc.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Data, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Core.Debug.0.3.4\lib\net48\Corex.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Device, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Device.Debug.0.3.4\lib\net48\Corex.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Internationalization, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Internationalization.Debug.0.3.4\lib\net48\Corex.Internationalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Log, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Core.Debug.0.3.4\lib\net48\Corex.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.StateMachine, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.StateMachine.Debug.0.3.4\lib\net48\Corex.StateMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Threading, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Core.Debug.0.3.4\lib\net48\Corex.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.UI, Version=0.3.4.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\CxAF.UI.Debug.0.3.4\lib\net48\Corex.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.UI.Canvas, Version=0.3.4.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\CxAF.UI.Canvas.Charting.Debug.0.3.4\lib\net48\Corex.UI.Canvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.UI.Canvas.Charting, Version=0.3.4.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\CxAF.UI.Canvas.Charting.Debug.0.3.4\lib\net48\Corex.UI.Canvas.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.UI.Canvas.Controls, Version=0.3.4.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\CxAF.UI.Canvas.Debug.0.3.4\lib\net48\Corex.UI.Canvas.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.UI.Monitoring, Version=0.3.4.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\CxAF.UI.Debug.0.3.4\lib\net48\Corex.UI.Monitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Unsafe, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Core.Debug.0.3.4\lib\net48\Corex.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Corex.Work, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CxAF.Work.Debug.0.3.4\lib\net48\Corex.Work.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="CorelibForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DoubleClickButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -70,6 +130,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

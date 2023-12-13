@@ -31,6 +31,7 @@ namespace calculatorUI
                 case "/":
                     if (!suspendOperation)
                     {
+                        //click  "5" "+"  in  first times
                         if (operationStack.Count == 0)
                         {
                             if (DigitExpression == "")
@@ -44,16 +45,15 @@ namespace calculatorUI
                             operationStack.Push(keyInChar);
 
                             Expression = DigitExpression.ToString() + keyInChar;
-
                         }
 
+                        //click  "5" "+" "5" "-" in  first times
                         else if (operationStack.Count == 2 && (operationStack.Peek() == "+" || operationStack.Peek() == "-" || operationStack.Peek() == "*" || operationStack.Peek() == "/"))
                         {
 
                             decimal? backValue = Convert.ToDecimal(DigitExpression);
                             string calculateType = operationStack.Pop();
                             decimal? frontValue = Convert.ToDecimal(operationStack.Pop());
-
                             decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
                             Records.Add(new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
                             UpdateRecordUI?.Invoke();
@@ -75,14 +75,13 @@ namespace calculatorUI
                             Expression = reuslt.ToString() + keyInChar;
                         }
 
+                        //click  "5" "+" "5" "-" in second and more times
                         else if (operationStack.Count == 3 && (operationStack.ElementAt(1) == "+" || operationStack.ElementAt(1) == "-" || operationStack.ElementAt(1) == "*" || operationStack.ElementAt(1) == "/"))
                         {
                             operationStack.Pop();
                             decimal? backValue = Convert.ToDecimal(DigitExpression);
-
                             string calculateType = operationStack.Pop();
                             decimal? frontValue = Convert.ToDecimal(operationStack.Pop());
-
                             decimal? reuslt = calculateOperation(frontValue, backValue, calculateType);
                             Records.Add( new RecordItem(frontValue.ToString() + calculateType + backValue.ToString() + "=" + reuslt.ToString()));
                             UpdateRecordUI?.Invoke();
@@ -110,20 +109,44 @@ namespace calculatorUI
 
                     else
                     {
-                        decimal? backValue = Convert.ToDecimal(operationStack.Pop());
-                        string calculateType = operationStack.Pop();
-                        decimal? frontValue = Convert.ToDecimal(operationStack.Peek());
+                        //click  "1" "+" "-" in second and more times
+                        if (operationStack.Count == 3)
+                        {
 
-                        operationStack.Push(keyInChar);
-                        operationStack.Push(backValue.ToString());
+                            decimal? backValue = Convert.ToDecimal(operationStack.Pop());
+                            string calculateType = operationStack.Pop();
+                            decimal? frontValue = Convert.ToDecimal(operationStack.Peek());
 
-                        //update expression
-                        Expression = frontValue.ToString() + keyInChar;
+                            operationStack.Push(keyInChar);
+                            operationStack.Push(backValue.ToString());
 
-                        // update Status
-                        resetDigitExpression = true;
-                        suspendOperation = true;
-                        suspendEqual = false;
+                            //update expression
+                            Expression = frontValue.ToString() + keyInChar;
+
+                            // update Status
+                            resetDigitExpression = true;
+                            suspendOperation = true;
+                            suspendEqual = false;
+                        }
+
+                        //click  "1" "+" "-" in  first run
+                        else if (operationStack.Count == 2)
+                        {
+                            string calculateType = operationStack.Pop();
+                            decimal? frontValue = Convert.ToDecimal(operationStack.Peek());
+
+                            operationStack.Push(keyInChar);
+                            operationStack.Push(frontValue.ToString());
+
+                            //update expression
+                            Expression = frontValue.ToString() + keyInChar;
+
+                            // update Status
+                            resetDigitExpression = true;
+                            suspendOperation = true;
+                            suspendEqual = false;
+
+                        }
                     }
 
                     break;

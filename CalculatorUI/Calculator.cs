@@ -49,9 +49,8 @@ namespace calculatorUI
 
                         else if (operationStack.Count == 2 && (operationStack.Peek() == "+" || operationStack.Peek() == "-" || operationStack.Peek() == "*" || operationStack.Peek() == "/"))
                         {
-                            operationStack.Push(DigitExpression);
 
-                            decimal? backValue = Convert.ToDecimal(operationStack.Pop());
+                            decimal? backValue = Convert.ToDecimal(DigitExpression);
                             string calculateType = operationStack.Pop();
                             decimal? frontValue = Convert.ToDecimal(operationStack.Pop());
 
@@ -78,7 +77,9 @@ namespace calculatorUI
 
                         else if (operationStack.Count == 3 && (operationStack.ElementAt(1) == "+" || operationStack.ElementAt(1) == "-" || operationStack.ElementAt(1) == "*" || operationStack.ElementAt(1) == "/"))
                         {
-                            decimal? backValue = Convert.ToDecimal(operationStack.Pop());
+                            operationStack.Pop();
+                            decimal? backValue = Convert.ToDecimal(DigitExpression);
+
                             string calculateType = operationStack.Pop();
                             decimal? frontValue = Convert.ToDecimal(operationStack.Pop());
 

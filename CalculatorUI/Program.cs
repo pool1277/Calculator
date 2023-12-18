@@ -13,8 +13,8 @@ namespace calculatorUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Application.Run(new CorelibForm());
+            Application.Run(new Form1());
+            //Application.Run(new CorelibForm());
 
         }
     }

@@ -91,6 +91,7 @@ namespace calculatorUI
                                 DigitExpression = "Divide zero errer";
                                 return;
                             }
+
                             //push back to stack
                             operationStack.Push(reuslt.ToString());
                             operationStack.Push(keyInChar);
@@ -187,6 +188,10 @@ namespace calculatorUI
                 case "<-":
                     if (divideZeroError)
                         return;
+
+                    if (DigitExpression.Length <= 0)
+                        return;
+
                     DigitExpression = DigitExpression.Substring(0, DigitExpression.Length - 1);
                     break;
 
@@ -211,6 +216,10 @@ namespace calculatorUI
                 case "=":
                     if (divideZeroError)
                         return;
+
+                    if (operationStack.Count == 0)
+                        return;
+
                     if (!suspendEqual)
                     {
                         if (operationStack.Count == 3)
@@ -254,6 +263,9 @@ namespace calculatorUI
         public void DoubleClickEqual()
         {
             if (divideZeroError)
+                return;
+
+            if (operationStack.Count == 0)
                 return;
 
             decimal? backValue = Convert.ToDecimal(operationStack.Pop());

@@ -65,76 +65,95 @@ namespace calculatorUI
             this.zeroButton = new CxButton("0", "zeroButton");
             this.zeroButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.zeroButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.zeroButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.oneButton = new CxButton("1", "oneButton");
             this.oneButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.oneButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.oneButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+
 
             this.twoButton = new CxButton("2", "twoButton");
             this.twoButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.twoButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.twoButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.threeButton = new CxButton("3", "threeButton");
             this.threeButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.threeButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.threeButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.fourButton = new CxButton("4", "fourButton");
             this.fourButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fourButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.fourButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.fiveButton = new CxButton("5", "fiveButton");
             this.fiveButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fiveButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.fiveButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.sixButton = new CxButton("6", "sixButton");
             this.sixButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sixButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.sixButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.sevenButton = new CxButton("7", "sevenButton");
             this.sevenButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sevenButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.sevenButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.eightButton = new CxButton("8", "eightButton");
             this.eightButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.eightButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.eightButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.nineButton = new CxButton("9", "nineButton");
             this.nineButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.nineButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.nineButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             //operation
             this.addButton = new CxButton("+", "addButton");
             this.addButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.addButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.addButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.subtractButton = new CxButton("-", "subtractButton");
             this.subtractButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.subtractButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.subtractButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.multipleButton = new CxButton("*", "multipleButton");
             this.multipleButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.multipleButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.multipleButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.divideButton = new CxButton("/", "divideButton");
             this.divideButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.divideButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.divideButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             //other 
             this.equalButton = new CxButton("=", "equalButton");
             this.equalButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.equalButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Botton_MouseDown);
+            this.equalButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.pointButton = new CxButton(".", "pointButton");
             this.pointButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.pointButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.pointButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.removeButton = new CxButton("<-", "removeButton");
             this.removeButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.removeButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.removeButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.cleanButton = new CxButton("C", "cleanButton");
             this.cleanButton.Font = new System.Drawing.Font("Consolas", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cleanButton.Click += new System.EventHandler(this.keyIn_Click);
+            this.cleanButton.GotFocus += new System.EventHandler(this.OnGetFocus);
 
             this.emptyButton = new CxButton("", "emptyButton");
 
@@ -252,6 +271,7 @@ namespace calculatorUI
             resultLabel.Text = calculator.DigitExpression;
             historyLabel.Text = calculator.Expression;
 
+            historyLabel.Focus();
         }
 
         private void equalButton_DoubleClick(object sender, EventArgs e)
@@ -262,6 +282,13 @@ namespace calculatorUI
             resultLabel.Text = calculator.DigitExpression;
             historyLabel.Text = calculator.Expression;
 
+            //Make enter can work 
+            historyLabel.Focus();
+        }
+        private void OnGetFocus(object sender, EventArgs e)
+        {
+            //Make key in enter can work. If bottoms get the focus, make label get the focus. 
+            resultLabel.Focus();
         }
 
         private void onKeyDown(object sender, KeyEventArgs e)

@@ -39,6 +39,27 @@ namespace calculatorUI
             this.pointButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.keyIn_Click);
             this.removeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.keyIn_Click);
             this.cleanButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.keyIn_Click);
+
+            this.zeroButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.oneButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.twoButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.threeButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.fourButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.fiveButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.sixButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.sevenButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.eightButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.nineButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.addButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.subtractButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.multipleButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.divideButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.equalButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.pointButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.removeButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.cleanButton.GotFocus += new System.EventHandler(this.OnGetFocus);
+            this.recordsRichTextBox.GotFocus += new System.EventHandler(this.OnGetFocus);
+
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyDown);
 
             calculator.UpdateRecordUI += OnUpdateRecordUI;
@@ -55,6 +76,11 @@ namespace calculatorUI
             resultLabel.Text = calculator.DigitExpression;
             historyLabel.Text = calculator.Expression;
 
+        }
+
+        private void OnGetFocus(object sender, EventArgs e)
+        {
+            resultLabel.Focus();
         }
 
         private void equalButton_DoubleClick(object sender, EventArgs e)
